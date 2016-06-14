@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>域名管理</title>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+<div class="container">
+  <h3>域名管理</h3>
+       <button type="button" class=" btn btn-info" @click="items.$set(items.length,['',''])">添加</button>
+      <button type="button" class=" btn btn-warning" @click="save">保存</button>
+    <table class="table table-hover">
+      <tr v-for="item in items">
+          <td><input v-model="item[0]" /></td>
+          <td><input v-model="item[1]" /></td>
+          <td><button type="button" class=" btn btn-danger" @click="items.$remove(item)">删除</button></td>
+      </tr> 
+    </table>
+</div>
+
+  
+  </body>
+  <script>
+    require('./index.js');
+  </script>
+</html>
